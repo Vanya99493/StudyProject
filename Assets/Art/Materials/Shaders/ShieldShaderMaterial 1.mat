@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-2535274946575112393
+--- !u!114 &-4910509657434236419
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TileBuildShaderMaterial
-  m_Shader: {fileID: -6465566751694194690, guid: 57d9d201d6bc8d544a444ac214485167,
+  m_Name: ShieldShaderMaterial 1
+  m_Shader: {fileID: -6465566751694194690, guid: 2fe5d104efbf98e47a33b54a84473c18,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -61,12 +61,16 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
+    - _EmissionTex:
+        m_Texture: {fileID: 2800000, guid: e9b4f69beac739043bc9445bb84c2610, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _MainTexture:
-        m_Texture: {fileID: 2800000, guid: d1118dda59970a2449ee890fa247c4c5, type: 3}
+    - _Gradient:
+        m_Texture: {fileID: 2800000, guid: bff702f78afe25842bfbd5b855ff812c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 582255aaf30060249b6ca25836a62957, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -79,10 +83,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ProgressTexture:
-        m_Texture: {fileID: 2800000, guid: bff702f78afe25842bfbd5b855ff812c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -120,16 +120,17 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _GradientTyleY: 20
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
-    - _Progress: 0.276
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
+    - _Speed: 3
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
@@ -138,6 +139,11 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColler: {r: 0.32738087, g: 0.10764508, b: 0.38679248, a: 0}
+    - _EmissionCollor: {r: 0.41829836, g: 1.6909935, b: 1.8867927, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _ExtraEmmisionCollor: {r: 0.067506224, g: 0.1567131, b: 0.3490566, a: 0}
+    - _MainTexTiling: {r: 8, g: 8, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _Tiling: {r: 22, g: 18, b: 0, a: 0}
   m_BuildTextureStacks: []
