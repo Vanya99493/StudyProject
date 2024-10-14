@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7681255186768136509}
-  - component: {fileID: 5913550825603861513}
+  - component: {fileID: 5990269915237679248}
   m_Layer: 0
   m_Name: DestinationPointSpawner
   m_TagString: Untagged
@@ -24,15 +24,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8751600977712180571}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5913550825603861513
+--- !u!114 &5990269915237679248
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,7 +41,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8751600977712180571}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a29a957640a8467b8bf6c6e2c1b8d2f8, type: 3}
+  m_Script: {fileID: 11500000, guid: f8a9f43d6aa345788eb406f4dedadce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _destinationPointPrefab: {fileID: 2488635946745410895, guid: d0b2951c32c78884aafc1a6937650112,
