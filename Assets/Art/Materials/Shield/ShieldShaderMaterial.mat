@@ -120,7 +120,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _GradientTyleY: 20
+    - _GradientTyleY: 5
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
@@ -142,7 +142,7 @@ Material:
     - _EmissionColler: {r: 0.32738087, g: 0.10764508, b: 0.38679248, a: 0}
     - _EmissionCollor: {r: 0.09611963, g: 0.4022024, b: 0.4528302, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ExtraEmmisionCollor: {r: 0.067506224, g: 0.1567131, b: 0.3490566, a: 0}
+    - _ExtraEmmisionCollor: {r: 0, g: 0, b: 0, a: 0}
     - _MainTexTiling: {r: 40, g: 25, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Tiling: {r: 22, g: 18, b: 0, a: 0}
