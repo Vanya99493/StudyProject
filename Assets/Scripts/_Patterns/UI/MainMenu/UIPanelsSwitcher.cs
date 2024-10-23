@@ -14,13 +14,29 @@ namespace _Patterns.UI.MainMenu
 		public event Action PauseEvent;
 		public event Action UnpauseEvent;
 		// =====
+
+		[SerializeField] private MainMenuPanel _mainMenuPanel;
+		[SerializeField] private SettingsPanel _settingsPanel;
+		[SerializeField] private StartLevelPanel _startLevelPanel;
+		[SerializeField] private PausePanel _pausePanel;
+		[SerializeField] private GameHudPanel _gameHudPanel;
 		
 		[SerializeField] private SerializableDictionary<PanelType, BaseMediatablePanel> _panels;
 		
+		private Dictionary<PanelType, BaseMediatablePanel> _mediatablePanels;
 		private readonly Dictionary<PanelType, BaseMediatablePanel> _currentOpenPanels = new ();
 		
 		private void Awake()
 		{
+			_mediatablePanels = new Dictionary<PanelType, BaseMediatablePanel>()
+			{
+				{ PanelType.MainMenu, _mainMenuPanel },
+				{ PanelType.Settings, _settingsPanel },
+				{ PanelType.StartLevel, _startLevelPanel },
+				{ PanelType.PauseMenu, _pausePanel },
+				{ PanelType.GameHud, _gameHudPanel }
+			};
+			
 			foreach (var panel in _panels)
 			{
 				panel.Value.Initialize(this);
