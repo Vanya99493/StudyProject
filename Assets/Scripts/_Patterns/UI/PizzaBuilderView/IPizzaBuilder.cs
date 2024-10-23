@@ -1,4 +1,4 @@
-﻿namespace _Patterns
+﻿namespace _Patterns.UI.PizzaBuilderView
 {
 	public interface IPizzaBuilder
 	{

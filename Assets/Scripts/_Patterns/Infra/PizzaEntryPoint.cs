@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using _Patterns.UI.PizzaBuilderView;
+using UnityEngine;
 
 namespace _Patterns
 {
-	public class EntryPoint : MonoBehaviour
+	public class PizzaEntryPoint : MonoBehaviour
 	{
 		[SerializeField] private PizzaBuilder _pizzaBuilder;
 

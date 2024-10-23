@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace _Patterns
+namespace _Patterns.UI.PizzaBuilderView
 {
 	public class PizzaBuilder : MonoBehaviour, IPizzaBuilder
 	{
