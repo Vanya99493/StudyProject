@@ -1,4 +1,4 @@
-﻿namespace _Pattern_builder
+﻿namespace _Patterns
 {
 	public enum PizzaIngredient
 	{

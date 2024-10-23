@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _Pattern_builder
+namespace _Patterns
 {
 	public class EntryPoint : MonoBehaviour
 	{

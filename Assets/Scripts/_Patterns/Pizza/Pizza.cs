@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 
-namespace _Pattern_builder
+namespace _Patterns
 {
 	public class Pizza
 	{
@@ -10,6 +10,12 @@ namespace _Pattern_builder
 		public void AddIngredient(PizzaIngredient ingredient)
 		{
 			_pizzaIngredients.Add(ingredient);
+		}
+
+		public void RemoveIngredient(PizzaIngredient ingredient)
+		{
+			int ingredientIndex = _pizzaIngredients.LastIndexOf(ingredient);
+			_pizzaIngredients.RemoveAt(ingredientIndex);
 		}
 
 		public string GetPizza()

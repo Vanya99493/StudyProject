@@ -1,4 +1,4 @@
-﻿namespace _Pattern_builder
+﻿namespace _Patterns
 {
 	public interface IPizzaBuilder
 	{
@@ -6,5 +6,6 @@
 		void AddCheese();
         void AddPepperoni();
         void AddMushrooms();
+        void Undo();
 	}
 }
