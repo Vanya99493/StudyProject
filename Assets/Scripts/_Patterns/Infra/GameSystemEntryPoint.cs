@@ -14,7 +14,14 @@ namespace _Patterns
 
 		private void InitializeUI()
 		{
-			_uiPanelsSwitcher.Initialize(PanelType.MainMenu);
+			// =====
+			_uiPanelsSwitcher.StartLevelEvent += OnLevelStart;
+			_uiPanelsSwitcher.EndLevelEvent += OnLevelReset;
+			_uiPanelsSwitcher.PauseEvent += Onpause;
+			_uiPanelsSwitcher.UnpauseEvent += OnUnpause;
+			// =====
+			
+			_uiPanelsSwitcher.ActivateStartPanel(PanelType.MainMenu);
 		}
 
 		private void OnLevelStart()

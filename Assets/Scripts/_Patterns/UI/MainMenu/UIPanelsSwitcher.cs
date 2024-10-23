@@ -7,9 +7,17 @@ namespace _Patterns.UI.MainMenu
 {
 	public class UIPanelsSwitcher : MonoBehaviour, IUIMediator
 	{
+		// TODO implement some system to invoke this event
+		// =====
+		public event Action StartLevelEvent;
+		public event Action EndLevelEvent;
+		public event Action PauseEvent;
+		public event Action UnpauseEvent;
+		// =====
+		
 		[SerializeField] private SerializableDictionary<PanelType, BaseMediatablePanel> _panels;
 		
-		private Dictionary<PanelType, BaseMediatablePanel> _currentOpenPanels = new ();
+		private readonly Dictionary<PanelType, BaseMediatablePanel> _currentOpenPanels = new ();
 		
 		private void Awake()
 		{
@@ -19,7 +27,7 @@ namespace _Patterns.UI.MainMenu
 			}
 		}
 
-		public void Initialize(PanelType startPanelType)
+		public void ActivateStartPanel(PanelType startPanelType)
 		{
 			foreach (var panel in _panels)
 			{
