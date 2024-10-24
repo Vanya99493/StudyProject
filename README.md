@@ -1,2 +1,8 @@
 # StudyProject
-123
+
+### Patterns
+- State machine
+- Builder
+- Command
+- Mediator
+- Strategy
