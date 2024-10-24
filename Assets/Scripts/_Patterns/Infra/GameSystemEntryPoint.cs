@@ -1,4 +1,6 @@
-﻿using _Patterns.UI.MainMenu;
+﻿using _Patterns.LevelImplementation;
+using _Patterns.PauseController;
+using _Patterns.UI.MainMenu;
 using UnityEngine;
 
 namespace _Patterns
@@ -6,42 +8,34 @@ namespace _Patterns
 	public class GameSystemEntryPoint : MonoBehaviour
 	{
 		[SerializeField] private UIPanelsSwitcher _uiPanelsSwitcher;
+		[SerializeField] private PauseHandler _pauseHandler;
+		[SerializeField] private Level _level;
 
 		private void Awake()
 		{
 			InitializeUI();
+			InitializePauseHandler();
+		}
+
+		private void OnDisable()
+		{
+			DeinitializePauseHandler();
 		}
 
 		private void InitializeUI()
 		{
-			// =====
-			_uiPanelsSwitcher.StartLevelEvent += OnLevelStart;
-			_uiPanelsSwitcher.EndLevelEvent += OnLevelReset;
-			_uiPanelsSwitcher.PauseEvent += Onpause;
-			_uiPanelsSwitcher.UnpauseEvent += OnUnpause;
-			// =====
-			
+			_uiPanelsSwitcher.Initialize(_pauseHandler, _level);
 			_uiPanelsSwitcher.ActivateStartPanel(PanelType.MainMenu);
 		}
 
-		private void OnLevelStart()
+		private void InitializePauseHandler()
 		{
-			Debug.Log("OnLevelStart");
+			_pauseHandler.AddSubscriber(_level);
 		}
 
-		private void OnLevelReset()
+		private void DeinitializePauseHandler()
 		{
-			Debug.Log("OnLevelReset");
-		}
-
-		private void Onpause()
-		{
-			Debug.Log("Onpause");
-		}
-
-		private void OnUnpause()
-		{
-			Debug.Log("OnUnpause");
+			_pauseHandler.RemoveSubscriber(_level);
 		}
 	}
 }

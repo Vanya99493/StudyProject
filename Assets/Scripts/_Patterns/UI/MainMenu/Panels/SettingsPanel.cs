@@ -7,7 +7,7 @@ namespace _Patterns.UI.MainMenu
 	{
 		[SerializeField] private Button _returnButton;
 
-		public void Start()
+		private void Start()
 		{
 			_returnButton.onClick.AddListener(() => _uiMediator.Notify(this, MessageType.CloseCurrent, PanelType.Settings));
 		}

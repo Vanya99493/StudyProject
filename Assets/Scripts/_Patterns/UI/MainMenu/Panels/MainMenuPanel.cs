@@ -8,7 +8,7 @@ namespace _Patterns.UI.MainMenu
 		[SerializeField] private Button _startLevelButton;
 		[SerializeField] private Button _settingsButton;
 
-		public void Start()
+		private void Start()
 		{
 			_startLevelButton.onClick.AddListener(() => _uiMediator.Notify(this, MessageType.OpenNew, PanelType.StartLevel));
 			_settingsButton.onClick.AddListener(() => _uiMediator.Notify(this, MessageType.OpenOnTop, PanelType.Settings));

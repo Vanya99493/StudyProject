@@ -1,6 +1,8 @@
-﻿namespace _Patterns.UI.MainMenu
+﻿using UnityEngine;
+
+namespace _Patterns.UI.MainMenu
 {
-	public class BaseMediatablePanel : BasePanel
+	public class BaseMediatablePanel : MonoBehaviour
 	{
 		protected IUIMediator _uiMediator;
 		
