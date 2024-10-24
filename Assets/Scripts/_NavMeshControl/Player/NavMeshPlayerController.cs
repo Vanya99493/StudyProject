@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.EventSystems;
 
 namespace _1_NavMeshControl.Player
 {
@@ -21,12 +22,12 @@ namespace _1_NavMeshControl.Player
 			{
 				_isMoved = true;
 				var animationDirection = CalculateDirection();
-				_playerAnimationController.SetSpeed(animationDirection.x, animationDirection.z, 0.75f);
+				_playerAnimationController?.SetSpeed(animationDirection.x, animationDirection.z, 0.75f);
 				CheckDistance();
 			}
 			else
 			{
-				_playerAnimationController.SetSpeed(0, 0, 0.25f);
+				_playerAnimationController?.SetSpeed(0, 0, 0.25f);
 				
 				if (_isMoved)
 				{
@@ -38,6 +39,11 @@ namespace _1_NavMeshControl.Player
 
 		public void ThrowRayAndTryBuildRoute()
 		{
+			if (EventSystem.current.IsPointerOverGameObject())
+			{
+				return;
+			}
+			
 			Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
 
 			if (Physics.Raycast(ray, out var hit))
