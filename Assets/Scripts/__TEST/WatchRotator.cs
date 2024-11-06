@@ -7,9 +7,16 @@ namespace __TEST
 	{
 		[SerializeField] private Vector3 _rotationLimitAngles;
 		[SerializeField] private float _rotationSpeed = 5f;
+		[SerializeField] private Vector3 _forwardVector;
 		[SerializeField] private Transform _followTarget;
 
-		[SerializeField] private Vector3 _initialRotation = Vector3.zero;
+		private Vector3 _initialRotation = Vector3.zero;
+		private Vector3 _normalizedForward;
+
+		private void Awake()
+		{
+			_normalizedForward = _forwardVector == Vector3.zero ? transform.forward : _forwardVector.normalized;
+		}
 
 		private void Update()
 		{
@@ -21,7 +28,7 @@ namespace __TEST
 			Vector3 directionToSecondObject2 = (_followTarget.position - transform.position).normalized;
 
 			Quaternion currentGlobalRotation = transform.rotation;
-			Quaternion targetRotation = Quaternion.FromToRotation(-transform.forward, directionToSecondObject2) * currentGlobalRotation;
+			Quaternion targetRotation = Quaternion.FromToRotation(-_normalizedForward, directionToSecondObject2) * currentGlobalRotation;
 			Quaternion localTargetRotation = Quaternion.Inverse(transform.parent.rotation) * targetRotation;
 
 			Vector3 clampedEulerAngles = new Vector3(
