@@ -5,8 +5,7 @@ namespace __TEST
 {
 	public class WatchRotator : MonoBehaviour
 	{
-		[SerializeField] private float _maxHorizontalRotationAngle = 15f;
-		[SerializeField] private float _maxVerticalRotationAngle = 40f;
+		[SerializeField] private Vector3 _rotationLimitAngles;
 		[SerializeField] private float _rotationSpeed = 5f;
 		[SerializeField] private Transform _followTarget;
 
@@ -28,39 +27,22 @@ namespace __TEST
 			Vector3 clampedEulerAngles = new Vector3(
 				Mathf.Clamp(
 					TransformRotationAngle(localTargetRotation.eulerAngles.x),
-					_initialRotation.x - _maxVerticalRotationAngle,
-					_initialRotation.x + _maxVerticalRotationAngle
+					_initialRotation.x - _rotationLimitAngles.x,
+					_initialRotation.x + _rotationLimitAngles.x
 				),
 				Mathf.Clamp(
 					TransformRotationAngle(localTargetRotation.eulerAngles.y),
-					_initialRotation.y - _maxHorizontalRotationAngle,
-					_initialRotation.y + _maxHorizontalRotationAngle
+					_initialRotation.y - _rotationLimitAngles.y,
+					_initialRotation.y + _rotationLimitAngles.y
 				),
-				_initialRotation.z
+				Mathf.Clamp(
+					TransformRotationAngle(localTargetRotation.eulerAngles.z),
+					_initialRotation.z - _rotationLimitAngles.z,
+					_initialRotation.z + _rotationLimitAngles.z
+				)
 			);
 
 			transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(clampedEulerAngles), _rotationSpeed * Time.deltaTime);
-
-			return;
-			
-			Vector3 directionToSecondObject = (_followTarget.position - transform.position).normalized;
-			
-			var currentRotation = transform.localRotation;
-			var newRotation = Quaternion.FromToRotation(-transform.forward, directionToSecondObject);
-			currentRotation *= newRotation;
-			Vector3 newRotationsEuler = new Vector3(
-					Mathf.Clamp(
-						TransformRotationAngle(currentRotation.eulerAngles.x), 
-						_initialRotation.x - _maxVerticalRotationAngle, 
-						_initialRotation.x + _maxVerticalRotationAngle),
-					Mathf.Clamp(
-						TransformRotationAngle(currentRotation.eulerAngles.y), 
-						_initialRotation.y - _maxHorizontalRotationAngle, 
-						_initialRotation.y + _maxHorizontalRotationAngle),
-					_initialRotation.z
-					);
-			transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(newRotationsEuler), _rotationSpeed * Time.deltaTime);
-			//transform.localRotation = Quaternion.Euler(newRotationsEuler);
 		}
 
 		private float TransformRotationAngle(float currentRotationAngle)
@@ -84,8 +66,8 @@ namespace __TEST
 			float verticalAngle = Vector3.SignedAngle(-transform.forward, verticalDirection, transform.right);
 			
 			transform.localRotation = Quaternion.Euler(
-				Mathf.Clamp(_initialRotation.x + verticalAngle, _initialRotation.x - _maxVerticalRotationAngle, _initialRotation.x + _maxVerticalRotationAngle),
-				Mathf.Clamp(_initialRotation.y + horizontalAngle, _initialRotation.x - _maxHorizontalRotationAngle, _initialRotation.x + _maxHorizontalRotationAngle),
+				Mathf.Clamp(_initialRotation.x + verticalAngle, _initialRotation.x - _rotationLimitAngles.x, _initialRotation.x + _rotationLimitAngles.x),
+				Mathf.Clamp(_initialRotation.y + horizontalAngle, _initialRotation.x - _rotationLimitAngles.y, _initialRotation.x + _rotationLimitAngles.y),
 				_initialRotation.z
 			);
 		}
