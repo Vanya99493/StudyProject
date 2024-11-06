@@ -1,35 +1,35 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace __TEST
 {
 	public class WatchRotator : MonoBehaviour
 	{
+		[Tooltip("An object that will rotate. Root must be in Vector3.zero local coordinates")]
+		[SerializeField] private Transform _root;
+		
+		[Tooltip("Limits by three axis on object rotation")]
 		[SerializeField] private Vector3 _rotationLimitAngles;
+		
+		[Tooltip("The plane from which the forward vector will be calculated")]
+		[SerializeField] private Transform _contentPlaneTransform;
+		
 		[SerializeField] private float _rotationSpeed = 5f;
-		[SerializeField] private Vector3 _forwardVector;
 		[SerializeField] private Transform _followTarget;
-
+		
 		private Vector3 _initialRotation = Vector3.zero;
-		private Vector3 _normalizedForward;
-
-		private void Awake()
-		{
-			_normalizedForward = _forwardVector == Vector3.zero ? transform.forward : _forwardVector.normalized;
-		}
 
 		private void Update()
 		{
-			RotateByFromTo();
+			RotateWatch();
 		}
 
-		private void RotateByFromTo()
+		private void RotateWatch()
 		{
-			Vector3 directionToSecondObject2 = (_followTarget.position - transform.position).normalized;
+			Vector3 directionToSecondObject2 = (_followTarget.position - _root.position).normalized;
 
-			Quaternion currentGlobalRotation = transform.rotation;
-			Quaternion targetRotation = Quaternion.FromToRotation(-_normalizedForward, directionToSecondObject2) * currentGlobalRotation;
-			Quaternion localTargetRotation = Quaternion.Inverse(transform.parent.rotation) * targetRotation;
+			Quaternion currentGlobalRotation = _root.rotation;
+			Quaternion targetRotation = Quaternion.FromToRotation(-_contentPlaneTransform.forward, directionToSecondObject2) * currentGlobalRotation;
+			Quaternion localTargetRotation = Quaternion.Inverse(_root.parent.rotation) * targetRotation;
 
 			Vector3 clampedEulerAngles = new Vector3(
 				Mathf.Clamp(
@@ -49,9 +49,9 @@ namespace __TEST
 				)
 			);
 
-			transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(clampedEulerAngles), _rotationSpeed * Time.deltaTime);
+			_root.localRotation = Quaternion.Lerp(_root.localRotation, Quaternion.Euler(clampedEulerAngles), _rotationSpeed * Time.deltaTime);
 		}
-
+		
 		private float TransformRotationAngle(float currentRotationAngle)
 		{
 			if (currentRotationAngle > 360f / 2f)
