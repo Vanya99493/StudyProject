@@ -39,10 +39,13 @@ namespace _1_NavMeshControl.Player
 
 		public void ThrowRayAndTryBuildRoute()
 		{
-			if (EventSystem.current.IsPointerOverGameObject())
-			{
-				return;
-			}
+            if(EventSystem.current != null)
+            {
+			    if (EventSystem.current.IsPointerOverGameObject())
+			    {
+				    return;
+			    }
+            }
 			
 			Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
 
