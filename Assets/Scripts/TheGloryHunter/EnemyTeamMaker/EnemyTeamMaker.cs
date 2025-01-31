@@ -20,16 +20,6 @@ namespace TheGloryHunter
 				Debug.Log("None enemies match the level");
 				return _closestEnemyTeam;
 			}
-
-			foreach (var enemiesTeam in enemiesTeams)
-			{
-				Debug.Log("-----------\n");
-				foreach (var enemyData in enemiesTeam)
-				{
-					Debug.Log($"\t{enemyData.Name} ({enemyData.Weight})\n");
-				}
-			}
-			Debug.Log("-----------");
 			
 			int enemyTeamIndex = Random.Range(0, enemiesTeams.Count);
 			return enemiesTeams[enemyTeamIndex];
