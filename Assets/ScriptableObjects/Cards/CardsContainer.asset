@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f198209ff84f44a2bcb113cea7ec84d6, type: 3}
+  m_Name: CardsContainer
+  m_EditorClassIdentifier: 
+  MaxDropChnceValue: 100
+  CardsRarities:
+  - CardRarity: 3
+    CardDropChance: 0.1
+    Cards:
+    - {fileID: 11400000, guid: 583078a3b76ea7b4f9aaf31cb5590898, type: 2}
+    - {fileID: 11400000, guid: e5da8c88eef264449a9ccffced336197, type: 2}
+    - {fileID: 11400000, guid: 5cd40d6d99d528244a8c50d8e0873561, type: 2}
+  - CardRarity: 2
+    CardDropChance: 2
+    Cards:
+    - {fileID: 11400000, guid: 40c261936d88d6841a050d248678f108, type: 2}
+    - {fileID: 11400000, guid: 0e7f5b3c49b3a8b4da710ed0162e16a0, type: 2}
+    - {fileID: 11400000, guid: 860d69f39e2d87c4595f025ac78003c9, type: 2}
+  - CardRarity: 1
+    CardDropChance: 17.9
+    Cards:
+    - {fileID: 11400000, guid: bd440afd124f1324ebe6b33ed0879e9b, type: 2}
+    - {fileID: 11400000, guid: 8f243808c7cbc324eac5d476b1145f9a, type: 2}
+    - {fileID: 11400000, guid: 62e7046d3cbcac342b239b2ade16ea8d, type: 2}
+  - CardRarity: 0
+    CardDropChance: 80
+    Cards:
+    - {fileID: 11400000, guid: caf6d460b8298014cac22e1eb12a922c, type: 2}
+    - {fileID: 11400000, guid: cd5432ece43da434b8835e2ede98a7e3, type: 2}
+    - {fileID: 11400000, guid: 30804614389320340894d2f17665dbd3, type: 2}
