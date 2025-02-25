@@ -2,7 +2,7 @@
 
 namespace AIIntegration.ChatGPT
 {
-	public static class Api
+	/*public static class Api
 	{
 		public const string Url = "https://api.openai.com/v1/chat/completions";
 	}
@@ -40,5 +40,5 @@ namespace AIIntegration.ChatGPT
 	{
 		public string model;
 		public RequestMessage[] messages;
-	}
+	}*/
 }

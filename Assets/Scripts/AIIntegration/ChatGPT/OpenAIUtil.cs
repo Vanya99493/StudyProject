@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 
 namespace AIIntegration.ChatGPT 
 {
-	static class OpenAIUtil
+	/*static class OpenAIUtil
 	{
 
 		public static IEnumerator SendRequestCoroutine(string requestText, Action<string> callback = null)
@@ -66,5 +66,5 @@ namespace AIIntegration.ChatGPT
 
 			return JsonUtility.ToJson(req);
 		}
-	}
+	}*/
 }

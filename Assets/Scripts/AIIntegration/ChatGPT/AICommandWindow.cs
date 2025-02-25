@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace AIIntegration.ChatGPT
 {
-	public sealed class AICommandWindow : EditorWindow
+	/*public sealed class AICommandWindow : EditorWindow
 {
     #region Temporary script file operations
 
@@ -87,5 +87,5 @@ namespace AIIntegration.ChatGPT
     }
 
     #endregion
-}
+}*/
 }

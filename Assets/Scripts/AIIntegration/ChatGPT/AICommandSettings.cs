@@ -2,7 +2,7 @@
 
 namespace AIIntegration.ChatGPT
 {
-	[FilePath("UserSettings/AICommandSettings.asset",
+	/*[FilePath("UserSettings/AICommandSettings.asset",
 		FilePathAttribute.Location.ProjectFolder)]
 	public sealed class AICommandSettings : ScriptableSingleton<AICommandSettings>
 	{
@@ -40,5 +40,5 @@ namespace AIIntegration.ChatGPT
 		[SettingsProvider]
 		public static SettingsProvider CreateCustomSettingsProvider()
 			=> new AICommandSettingsProvider();
-	}
+	}*/
 }

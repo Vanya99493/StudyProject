@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace AIIntegration.ChatGPT
 {
-	public class ChatGPTIntegration : MonoBehaviour
+	/*public class ChatGPTIntegration : MonoBehaviour
 	{
 		[SerializeField] private string _topic = "";
 		[SerializeField] private string _resultWordsNumber;
@@ -35,5 +35,5 @@ namespace AIIntegration.ChatGPT
 
 			throw new Exception("Cannot find the matched language");
 		}
-	}
+	}*/
 }
