@@ -32,6 +32,9 @@ namespace Sorting
 		
 		[Button("Merge Sort")]
 		public void StartMergeSortTest() => StartSortTest(new MergeSort());
+		
+		[Button("Quick Sort")]
+		public void StartQuickSortTest() => StartSortTest(new QuickSort());
 
 		private void StartSortTest(SortAlgorithm<int> algorithm)
 		{
