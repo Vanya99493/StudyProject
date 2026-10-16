@@ -35,6 +35,9 @@ namespace Sorting
 		
 		[Button("Quick Sort")]
 		public void StartQuickSortTest() => StartSortTest(new QuickSort());
+		
+		[Button("Shake Sort")]
+		public void StartShakeSortTest() => StartSortTest(new ShakeSort());
 
 		private void StartSortTest(SortAlgorithm<int> algorithm)
 		{
